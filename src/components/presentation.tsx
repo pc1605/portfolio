@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import React from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React from "react";
 
 export function Presentation() {
   // Personal information
   const profile = {
-    name: 'Parth Chauhan',
-    age: '24 years old',
-    location: 'Ahmedabad, India',
+    name: "Parth Chauhan",
+    age: "24 years old",
+    location: "Ahmedabad, India",
     // Add a newline character after the emoji
     description:
-      "Hey 👋\nI'm Parth, a passionate Mobile App Developer at Brilworks Software. I specialize in React Native and full-stack development with 2.5 years of experience. I'm passionate about AI, tech, Entrepreneurship and building innovative SaaS solutions.",
-    src: '/parth_profile.png',
+      "Hey 👋\nI'm Parth, a passionate Mobile App Developer at Brilworks Software. I specialize in React Native and full-stack development with 2.5 years of experience. I'm passionate about AI, tech, entrepreneurship and exploring new technologies.",
+    src: "/parth_profile.png",
     fallbackSrc:
-      'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
+      "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3",
   };
 
   // Animation variants for text elements
@@ -24,7 +24,7 @@ export function Presentation() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -36,7 +36,7 @@ export function Presentation() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
         delay: 0.2,
       },
     },
@@ -104,11 +104,11 @@ export function Presentation() {
             className="mt-4 flex flex-wrap gap-2"
           >
             {[
-              'React Native',
-              'Mobile Developer',
-              'Brilworks',
-              'AI Enthusiast',
-              'SaaS Builder',
+              "React Native",
+              "Mobile Developer",
+              "Brilworks",
+              "AI Enthusiast",
+              "Tech Explorer",
             ].map((tag) => (
               <span
                 key={tag}
