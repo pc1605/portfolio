@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { CalendarDays, Code2, Globe } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { motion } from "framer-motion";
+import { CalendarDays, Code2, Globe } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const OpportunityCard = () => {
   const openMail = () => {
-    window.open('mailto:parth1652001@gmail.com', '_blank');
+    window.open("mailto:parth1652001@gmail.com", "_blank");
   };
   const router = useRouter();
 
@@ -107,12 +107,12 @@ const OpportunityCard = () => {
           What I bring
         </p>
         <p className="text-foreground text-sm">
-          2.5 years of full-stack development experience at Brilworks Software.{' '}
+          2.5 years of full-stack development experience at Brilworks Software.{" "}
           <br />
           Mobile App Developer specializing in React Native and cross-platform
           solutions. <br />
-          Runner-up in company hackathon, passionate about building SaaS
-          products with AI + UX simplicity.
+          Runner-up in company hackathon, passionate about exploring new
+          technologies and creating innovative solutions.
         </p>
       </div>
 
