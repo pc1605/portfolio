@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Award, Code, GraduationCap, Mail, MessageSquare } from 'lucide-react';
-import React from 'react';
+import { motion } from "framer-motion";
+import { Award, Code, GraduationCap, Mail, MessageSquare } from "lucide-react";
+import React from "react";
 
 interface ChatLandingProps {
   submitQuery: (query: string) => void;
@@ -13,19 +13,19 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
   const suggestedQuestions = [
     {
       icon: <MessageSquare className="h-4 w-4" />,
-      text: 'Who are you?',
+      text: "Who are you?",
     },
     {
       icon: <Code className="h-4 w-4" />,
-      text: 'What projects have you worked on?',
+      text: "What projects have you worked on?",
     },
     {
       icon: <Award className="h-4 w-4" />,
-      text: 'What are your skills?',
+      text: "What are your skills?",
     },
     {
       icon: <Mail className="h-4 w-4" />,
-      text: 'How can I contact you?',
+      text: "How can I contact you?",
     },
   ];
 
@@ -62,7 +62,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
       {/* Welcome message */}
       <motion.div className="mb-8 text-center" variants={itemVariants}>
         <h2 className="mb-3 text-2xl font-semibold">
-            I'm Raphael's digital twin
+          I'm Parth's digital twin
         </h2>
         <p className="text-muted-foreground mx-auto max-w-md">
           The first portfolio that fit YOU needs.
