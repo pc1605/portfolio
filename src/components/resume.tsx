@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDownToLine, Download, Eye, File } from 'lucide-react';
-import Image from 'next/image';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowDownToLine, Download, Eye, File } from "lucide-react";
+import Image from "next/image";
 
 export function Resume() {
   // Resume details
   const resumeDetails = {
-    title: "Raphael's Resume",
-    description: 'Full Stack Developer • AI Specialist',
-    fileType: 'PDF',
-    lastUpdated: 'March 2025',
-    fileSize: '0.5 MB',
-    previewImageSrc: '/resume_giraud_preview.png',
-    downloadUrl: '/resume_giraud.pdf',
+    title: "Parth's Resume",
+    description: "Full Stack Developer",
+    fileType: "PDF",
+    lastUpdated: "October 2025",
+    fileSize: "0.2 MB",
+    previewImageSrc: "/resume_preview.png",
+    downloadUrl: "/resume_parth.pdf",
   };
 
   const handleDownload = () => {
     // Create a link element
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = resumeDetails.downloadUrl;
-    link.download = resumeDetails.downloadUrl.split('/').pop() || 'resume.pdf';
+    link.download = resumeDetails.downloadUrl.split("/").pop() || "resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -34,7 +34,7 @@ export function Resume() {
         className="group relative cursor-pointer overflow-hidden rounded-xl bg-accent p-0 transition-all duration-300"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.0, ease: 'easeOut' }}
+        transition={{ duration: 0.0, ease: "easeOut" }}
         whileHover={{ scale: 1.01 }}
       >
         {/* Details area (bottom part) */}
