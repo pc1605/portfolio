@@ -11,7 +11,7 @@ export function Resume() {
     title: "Parth's Resume",
     description: "Full Stack Developer",
     fileType: "PDF",
-    lastUpdated: "October 2025",
+    lastUpdated: "December 2025",
     fileSize: "0.2 MB",
     previewImageSrc: "/resume_preview.png",
     downloadUrl: "/resume_parth.pdf",
