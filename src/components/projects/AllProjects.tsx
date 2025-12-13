@@ -7,7 +7,6 @@ export default function AllProjects() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} layout={true} />
   ));
-  console.log(data[0]);
 
   return (
     <div className="w-full h-full pt-8">

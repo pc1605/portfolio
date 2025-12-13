@@ -2,7 +2,16 @@ import Image from "next/image";
 import { ChevronRight, Link } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
-const PROJECT_CONTENT = [
+interface ProjectProps {
+  title: string;
+  description?: string;
+  techStack?: string[];
+  date?: string;
+  links?: { name: string; url: string; disabled?: boolean }[];
+  images?: { src: string; alt: string }[];
+}
+
+const PROJECT_CONTENT: ProjectProps[] = [
   {
     title: "Endo App",
     description:
@@ -60,7 +69,7 @@ const PROJECT_CONTENT = [
       "iOS Development",
       "Android Development",
     ],
-    date: "2024",
+    date: "2024 - Present",
     links: [
       {
         name: "App Store - Attendee",
@@ -90,17 +99,61 @@ const PROJECT_CONTENT = [
       },
     ],
   },
+  {
+    title: "Radio Rangrezz",
+    description:
+      "A modern, feature-rich music streaming mobile application built with React Native, delivering personalized audio experiences with dynamic content management and seamless playback capabilities. The app provides users with access to curated music collections, live radio streaming, artist profiles, events, and exclusive promotional offers with professional audio streaming, background playback, and lock screen controls.",
+    techStack: [
+      "React Native",
+      "TypeScript",
+      "Zustand",
+      "React Query",
+      "React Navigation",
+      "Track Player",
+      "Reanimated",
+      "Google Sign-In",
+      "Apple Authentication",
+      "Axios",
+      "MMKV Storage",
+      "Bottom Sheet",
+      "Fast Image",
+      "NetInfo",
+    ],
+    date: "Aug 2025 - Present",
+    links: [
+      {
+        name: "App Store (Coming Soon)",
+        url: "",
+        disabled: true,
+      },
+      {
+        name: "Play Store (Coming Soon)",
+        url: "",
+        disabled: true,
+      },
+    ],
+    images: [
+      {
+        src: "/radio_rangrezz_home.jpg",
+        alt: "Radio Rangrezz home screen with albums, artists, and songs",
+      },
+      {
+        src: "/radio_rangrezz_radio.jpg",
+        alt: "Radio Rangrezz live radio streaming with RJ profiles",
+      },
+      {
+        src: "/radio_rangrezz_4.jpg",
+        alt: "Radio Rangrezz profile and settings screen",
+      },
+      {
+        src: "/radio_rangrezz_5.jpg",
+        alt: "Radio Rangrezz album details with track listing",
+      },
+    ],
+  },
 ];
 
-// Define interface for project prop
-interface ProjectProps {
-  title: string;
-  description?: string;
-  techStack?: string[];
-  date?: string;
-  links?: { name: string; url: string }[];
-  images?: { src: string; alt: string }[];
-}
+
 
 const ProjectContent = ({ project }: { project: ProjectProps }) => {
   // Find the matching project data
@@ -129,7 +182,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
               Technologies
             </h3>
             <div className="flex flex-wrap gap-2">
-              {projectData.techStack.map((tech, index) => (
+              {projectData.techStack?.map((tech, index) => (
                 <span
                   key={index}
                   className="rounded-full bg-neutral-200 px-3 py-1 text-sm text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200"
@@ -156,10 +209,12 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
             {projectData.links.map((link, index) => (
               <a
                 key={index}
-                href={link.url}
+                href={link.disabled ? undefined : link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl bg-[#F5F5F7] p-4 transition-colors hover:bg-[#E5E5E7] dark:bg-neutral-800 dark:hover:bg-neutral-700"
+                className={`group flex items-center justify-between rounded-xl bg-[#F5F5F7] p-4 transition-colors hover:bg-[#E5E5E7] dark:bg-neutral-800 dark:hover:bg-neutral-700 ${
+                  link.disabled ? "pointer-events-none opacity-50" : ""
+                }`}
               >
                 <span className="font-light capitalize">{link.name}</span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -206,5 +261,11 @@ export const data = [
     title: "Accelevents",
     src: "/acceleventspreview.png",
     content: <ProjectContent project={{ title: "Accelevents" }} />,
+  },
+  {
+    category: "Music Streaming App",
+    title: "Radio Rangrezz",
+    src: "/radio_rangrezz_logo.png",
+    content: <ProjectContent project={{ title: "Radio Rangrezz" }} />,
   },
 ];
